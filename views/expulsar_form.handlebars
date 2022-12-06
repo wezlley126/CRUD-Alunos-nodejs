@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="/Css/Vizualizar.css">
+
+<form class="" action="/expulsar" method="post">
+  <input type="text" name="id" value="" placeholder="Id do aluno">
+  <input type="text" name="nome" value="" placeholder="Nome do aluno">
+  <input type="submit" name="expulsar" value="Expulsar">
+</form>
+
+<table class="tabela_alunos">
+  <thead>
+    <tr>
+      <th class="titulos_alunos">Id</th>
+      <th class="titulos_alunos">Matricula</th>
+      <th class="titulos_alunos">Nome</th>
+      <th class="titulos_alunos">Sobrenome</th>
+      <th class="titulos_alunos">Turma</th>
+      <th class="titulos_alunos">Turno</th>
+    </tr>
+  </thead>
+  <tbody>
+{{#each alunos}}
+      <tr class="linha_alunos">
+        <td class="dados_alunos">{{id}}</td>
+        <td class="dados_alunos">{{matricula}}</td>
+        <td class="dados_alunos">{{nome}}</td>
+        <td class="dados_alunos">{{sobrenome}}</td>
+        <td class="dados_alunos">{{turma}}</td>
+        <td class="dados_alunos">{{turno}}</td>
+      </tr>
+{{/each}}

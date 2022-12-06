@@ -4,10 +4,49 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <link rel="stylesheet" href="/Css/main.css">
   </head>
   <body>
 
+    <div class="Home_div">
+      <a class="Home_button" href="/">Home</a>
+    </div>
+
     {{{body}}}
+
+    <style media="screen">
+      .Home_button{
+        background-color: white;
+        border: 2px solid black;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        color: black;
+      }
+
+      .Home_button:hover{
+        background-color: black;
+        color: white;
+        transition: 0.3s;
+      }
+
+      .Home_button:focus{
+        background-color: black;
+        color: white;
+        transition: 0.3s;
+      }
+
+      .Home_div{
+        display: grid;
+        justify-content: start;
+      }
+
+      body{
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        height: 100vh;
+      }
+    </style>
 
   </body>
 </html>

@@ -1,6 +1,7 @@
 const express = require('express');
 const handlebars = require('express-handlebars');
 const bodyParser = require('body-parser');
+const alunos = require('./Models/dbAlunos.js');
 const app = express();
 
 //Handlebars
@@ -25,6 +26,45 @@ app.get('/', (req, res) => {
 
 app.get('/cadastrar_form', (req, res) => {
   res.render('CadastroAlunos');
+});
+
+app.post('/cadastrar', (req, res) => {
+  alunos.create({
+    matricula: req.body.matricula,
+    nome: req.body.nome,
+    sobrenome: req.body.sobrenome,
+    turma: req.body.turma,
+    turno: req.body.turno
+  }).then(() => {
+    res.redirect('/cadastrar_form');
+  });
+});
+
+app.get('/vizualizar', (req, res) => {
+  alunos.findAll().then((dados) => {
+    res.render('Vizualizar', {alunos: dados});
+  });
+});
+
+app.get('/expulsar_form', (req, res) => {
+  alunos.findAll().then((dados) => {
+    res.render('expulsar_form', {alunos: dados});
+  });
+});
+
+app.post('/expulsar', (req, res) => {
+  alunos.destroy({where: {id: req.body.id} && {nome: req.body.nome}});
+  res.redirect('/expulsar_form');
+})
+
+app.get('/alterar_form', (req, res) => {
+  alunos.findAll().then((dados) => {
+    res.render('alterar', {alunos: dados});
+  });
+});
+
+app.post('/alterar', (req, res) => {
+  res.send(req.body.dado5);
 });
 
 app.listen(porta, () => {

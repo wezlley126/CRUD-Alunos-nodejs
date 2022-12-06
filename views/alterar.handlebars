@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="/Css/Vizualizar.css">
+
+<form class="" action="/alterar" method="post">
+
+  <table class="tabela_alunos">
+    <thead>
+      <tr>
+        <th class="titulos_alunos">Id</th>
+        <th class="titulos_alunos">Matricula</th>
+        <th class="titulos_alunos">Nome</th>
+        <th class="titulos_alunos">Sobrenome</th>
+        <th class="titulos_alunos">Turma</th>
+        <th class="titulos_alunos">Turno</th>
+      </tr>
+    </thead>
+    <tbody>
+  {{#each alunos}}
+        <tr class="linha_alunos">
+          <td class="dados_alunos"><input type="text" name="dado{{id}}" value="{{id}}"></td>
+          <td class="dados_alunos"><input type="text" name="matricula{{id}}" value="{{matricula}}"></td>
+          <td class="dados_alunos"><input type="text" name="nome{{id}}" value="{{nome}}"></td>
+          <td class="dados_alunos"><input type="text" name="sobrenome{{id}}" value="{{sobrenome}}"></td>
+          <td class="dados_alunos"><input type="text" name="turma{{id}}" value="{{turma}}"></td>
+          <td class="dados_alunos"><input type="text" name="turno{{id}}" value="{{turno}}"></td>
+        </tr>
+  {{/each}}
+  </tbody>
+  </table>
+  <input class="input_enviar" type="submit" name="" value="Salvar Alterações">
+</form>
+
+<style media="screen">
+  .input_enviar{
+    width: auto;
+    padding: 0.5rem;
+  }
+
+  input{
+    width: 100px;
+    text-align: center;
+  }
+</style>
