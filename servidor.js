@@ -57,16 +57,38 @@ app.post('/expulsar', (req, res) => {
   res.redirect('/expulsar_form');
 })
 
-app.get('/alterar_form', (req, res) => {
+app.get('/alterar_form/', (req, res) => {
   alunos.findAll().then((dados) => {
     res.render('alterar', {alunos: dados});
   });
 });
 
-app.post('/alterar', (req, res) => {
-  res.send(req.body.dado5);
+app.post('/procurar', (req, res) => {
+  //res.send('Olá mundo ' + req.body.id);
+  if (req.body.procurar) {
+    alunos.findAll().then((dados) => {
+      alunos.findAll({where: {id: req.body.id}}).then((dado) => {
+        res.render('alterar', {alunos: dados, procurar: req.body.id, aluno: dado});
+      })
+    });
+  }else{
+    res.send('Não enviado');
+  }
 });
 
+app.post('/alterar', (req, res) => {
+  alunos.update({
+    matricula: req.body.matricula,
+    nome: req.body.nome,
+    sobrenome: req.body.sobrenome,
+    turma: req.body.turma,
+    turno: req.body.turno
+  }, {where: {id: req.body.id}}).then(() => {
+    res.redirect('/alterar_form');
+  }).catch((erro) => {
+    res.send('Erro ' + erro);
+  })
+})
 app.listen(porta, () => {
   console.log('Servidor está rodando na porta ' + porta);
 });

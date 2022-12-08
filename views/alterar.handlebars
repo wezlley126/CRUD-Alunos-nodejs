@@ -1,6 +1,31 @@
 <link rel="stylesheet" href="/Css/Vizualizar.css">
 
-<form class="" action="/alterar" method="post">
+  {{#if procurar}}
+    <form style="margin-top: 2rem;" class="" action="/alterar" method="post">
+      <select style="padding: 0.25rem 0.5rem;" class="" name="id">
+        {{#each aluno}}
+          <option value="{{id}}">{{id}}</option>
+        {{/each}}
+      </select>
+    {{#each aluno}}
+      <input type="text" name="matricula" value="{{matricula}}" placeholder="Matricula">
+      <input type="text" name="nome" value="{{nome}}" placeholder="Nome">
+      <input type="text" name="sobrenome" value="{{sobrenome}}" placeholder="Sobrenome">
+      <input type="text" name="turma" value="{{turma}}" placeholder="Turma">
+      <input type="text" name="turno" value="{{turno}}" placeholder="Turno">
+      {{/each}}
+      <input type="submit" name="alterar" value="Alterar">
+    </form>
+  {{else}}
+    <form style="margin-top: 2rem;" class="" action="/procurar" method="post">
+      <select style="padding: 0.25rem 0.5rem;" class="" name="id">
+        {{#each alunos}}
+          <option value="{{id}}">{{id}}</option>
+        {{/each}}
+      </select>
+      <input type="submit" name="procurar" value="Procurar">
+    </form>
+  {{/if}}
 
   <table class="tabela_alunos">
     <thead>
@@ -16,18 +41,16 @@
     <tbody>
   {{#each alunos}}
         <tr class="linha_alunos">
-          <td class="dados_alunos"><input type="text" name="dado{{id}}" value="{{id}}"></td>
-          <td class="dados_alunos"><input type="text" name="matricula{{id}}" value="{{matricula}}"></td>
-          <td class="dados_alunos"><input type="text" name="nome{{id}}" value="{{nome}}"></td>
-          <td class="dados_alunos"><input type="text" name="sobrenome{{id}}" value="{{sobrenome}}"></td>
-          <td class="dados_alunos"><input type="text" name="turma{{id}}" value="{{turma}}"></td>
-          <td class="dados_alunos"><input type="text" name="turno{{id}}" value="{{turno}}"></td>
+          <td class="dados_alunos">{{id}}</td>
+          <td class="dados_alunos">{{matricula}}</td>
+          <td class="dados_alunos">{{nome}}</td>
+          <td class="dados_alunos">{{sobrenome}}</td>
+          <td class="dados_alunos">{{turma}}</td>
+          <td class="dados_alunos">{{turno}}</td>
         </tr>
   {{/each}}
   </tbody>
   </table>
-  <input class="input_enviar" type="submit" name="" value="Salvar Alterações">
-</form>
 
 <style media="screen">
   .input_enviar{
