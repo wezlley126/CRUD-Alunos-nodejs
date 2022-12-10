@@ -1,0 +1,49 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  max-width: 100%;
+}
+
+body{
+  background-color: skyblue;
+}
+
+main{
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  margin: auto;
+  gap: 1rem;
+  max-width: 95%;
+}
+
+main img{
+  max-width: 700px;
+}
+
+form{
+  border: 4px outset black;
+  padding: 2.5rem 3rem;
+  display: grid;
+  gap: 1rem;
+  text-align: center;
+  background-color: yellow;
+  justify-items: center;
+}
+
+form input{
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+form input:hover{
+  background-color: black;
+  color: skyblue;
+  transition: 0.3s;
+}
+
+form input:focus{
+  background-color: black;
+  color: skyblue;
+  transition: 0.3s;
+}

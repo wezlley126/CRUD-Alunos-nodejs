@@ -53,7 +53,7 @@ app.get('/expulsar_form', (req, res) => {
 });
 
 app.post('/expulsar', (req, res) => {
-  alunos.destroy({where: {id: req.body.id} && {nome: req.body.nome}});
+  alunos.destroy({where: {id: req.body.id, nome: req.body.nome}});
   res.redirect('/expulsar_form');
 })
 
