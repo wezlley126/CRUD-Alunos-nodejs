@@ -1,3 +1,17 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  max-width: 100%;
+}
+
+body{
+  background-color: skyblue;
+}
+
+table{
+  background-color: white;
+}
+
 .tabela_alunos{
   border: 2px solid black;
   padding: 0.5rem;
@@ -13,6 +27,67 @@
 
 .titulos_alunos{
   border: 2px outset black;
-  background-color: #F3F3F3;
+  background-color: yellow;
   padding: 0.5rem;
+}
+
+.dados_alunos:hover, .titulos_alunos:hover{
+  background-color: black;
+  color: skyblue;
+  transition: 0.3s;
+}
+
+.dados_alunos:focus, .titulos_alunos:focus{
+  background-color: black;
+  color: skyblue;
+  transition: 0.3s;
+}
+
+.submit_button{
+  padding: 0.5rem 1rem;
+}
+
+.submit_button:hover{
+  background-color: black;
+  color: skyblue;
+  transition: 0.3s;
+}
+
+.submit_button:focus{
+  background-color: black;
+  color: skyblue;
+  transition: 0.3s;
+}
+
+.select{
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+.select:hover{
+  background-color: black;
+  color: skyblue;
+  transition: 0.3s;
+}
+
+.select:focus{
+  background-color: black;
+  color: skyblue;
+  transition: 0.3s;
+}
+
+.input_alterar{
+  padding: 0.5rem 1rem;;
+}
+
+.input_alterar:hover{
+  background-color: black;
+  color: skyblue;
+  transition: 0.3s;
+}
+
+.input_alterar:focus{
+  background-color: black;
+  color: skyblue;
+  transition: 0.3s;
 }

@@ -1,29 +1,29 @@
 <link rel="stylesheet" href="/Css/Vizualizar.css">
 
   {{#if procurar}}
-    <form style="margin-top: 2rem;" class="" action="/alterar" method="post">
-      <select style="padding: 0.25rem 0.5rem;" class="" name="id">
+    <form class="" action="/alterar" method="post">
+      <select class="select" name="id">
         {{#each aluno}}
           <option value="{{id}}">{{id}}</option>
         {{/each}}
       </select>
     {{#each aluno}}
-      <input type="text" name="matricula" value="{{matricula}}" placeholder="Matricula">
-      <input type="text" name="nome" value="{{nome}}" placeholder="Nome">
-      <input type="text" name="sobrenome" value="{{sobrenome}}" placeholder="Sobrenome">
-      <input type="text" name="turma" value="{{turma}}" placeholder="Turma">
-      <input type="text" name="turno" value="{{turno}}" placeholder="Turno">
+      <input class="input_alterar" type="text" name="matricula" value="{{matricula}}" placeholder="Matricula">
+      <input class="input_alterar" type="text" name="nome" value="{{nome}}" placeholder="Nome">
+      <input class="input_alterar" type="text" name="sobrenome" value="{{sobrenome}}" placeholder="Sobrenome">
+      <input class="input_alterar" type="text" name="turma" value="{{turma}}" placeholder="Turma">
+      <input class="input_alterar" type="text" name="turno" value="{{turno}}" placeholder="Turno">
       {{/each}}
-      <input type="submit" name="alterar" value="Alterar">
+      <input class="submit_button" type="submit" name="alterar" value="Alterar">
     </form>
   {{else}}
     <form style="margin-top: 2rem;" class="" action="/procurar" method="post">
-      <select style="padding: 0.25rem 0.5rem;" class="" name="id">
+      <select class="select" name="id">
         {{#each alunos}}
           <option value="{{id}}">{{id}}</option>
         {{/each}}
       </select>
-      <input type="submit" name="procurar" value="Procurar">
+      <input class="submit_button" type="submit" name="procurar" value="Procurar">
     </form>
   {{/if}}
 
